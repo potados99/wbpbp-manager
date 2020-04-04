@@ -1,7 +1,4 @@
 if (process.env.NODE_ENV === 'production') {
-    if (!process.env.REDIS_URL) {
-        throw new Error('No REDIS_URL');
-    }
     if (!process.env.SLACK_TOKEN) {
         throw new Error('No SLACK_TOKEN');
     }
@@ -15,7 +12,6 @@ if (process.env.NODE_ENV === 'production') {
 
 export default {
     port: process.env.PORT || 3000,
-    redis_url: process.env.REDIS_URL || 'url',
     slack_token: process.env.SLACK_TOKEN || 'token',
     notice_channel: process.env.NOTICE_CHANNEL || 'channel',
     slack_signing_secret: process.env.SLACK_SIGNING_SECRET || 'secret',
